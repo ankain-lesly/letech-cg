@@ -1,0 +1,82 @@
+/* ON SCROLL ANIMATION SETUP */
+.lcg_will_animate,
+.lcg_scroll{
+  opacity: 0;
+  filter: blur(3px);
+  will-change: transform, opacity;
+  /* transition: all 500ms ease-in-out, opacity 500ms ease-in; */
+  transition: all 500ms ease, opacity 500ms ease-in;
+}
+/* ----PRESETS---- */
+.from_right{transform: translateX(80px)}
+.from_left{transform: translateX(-80px)}
+
+.from_left_rot{transform: translateX(-80px) rotate(10deg)}
+.from_left_rot_anti{transform: translateX(-80px) rotate(-10deg)}
+.from_right_rot{transform: translateX(80px) rotate(10deg)}
+.from_right_rot_anti{transform: translateX(80px) rotate(-10deg)}
+
+.from_top{transform: translateY(-80px)}
+.from_bottom{transform: translateY(80px)}
+
+.from_top_scale{transform: translateY(-80px) scale(0.2)}
+.from_bottom_scale{transform: translateY(80px) scale(0.2)}
+
+.from_height{height: 0;}
+.from_Scale{transform: scale(0.1)}
+
+.from_far_right.lcg_animate{
+  transform: translateX(-55rem);
+  animation: display 15s linear forwards;
+}
+@keyframes display {
+  0%{  transform: translateX(15rem) }
+  99%{  transform: translateX(-60em);  }
+  100%{  transform: translateX(0);  }
+}
+
+/* End Display */
+.lcg_will_animate.lcg_animate,
+.lcg_scroll.lcg_animate{
+  filter: blur(0);
+  opacity: 1;
+  transform: translate(0) scale(1) rotate(0);
+}
+.from_height.lcg_animate{
+  height: 100%;
+}
+
+/* Animation Delays */
+.lcg_animate.delay-1 {
+  transition-delay: 200ms;
+}
+.lcg_animate.delay-2 {
+  transition-delay: 400ms;
+}
+.lcg_animate.delay-3 {
+  transition-delay: 600ms;
+}
+.lcg_animate.delay-4 {
+  transition-delay: 800ms;
+}
+.lcg_animate.delay-5 {
+  transition-delay: 1000ms;
+}
+
+/* Desktop Transition Only */
+@media (max-width: 768px) {
+  .delay-min.lcg_animate {
+    transition-delay: 0ms;
+  }
+}
+/* Mobile Transition Only */
+@media (min-width: 768px) {
+  .delay-max.lcg_animate {
+    transition-delay: 0ms;
+  }
+}
+
+/* Disable Windows Overflow */
+section {
+  overflow-x: hidden;
+}

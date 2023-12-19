@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Poppins:wght@300;400;500;600;700;900&family=Quicksand:wght@300;400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Colors */
+    --hsl-clr-warning: 29, 100%, 62%;
+    --hsl-clr-primary: 257, 80%, 40%;
+    /* --hsl-clr-danger: 334, 100%, 67%; */
+    --hsl-clr-danger: 8, 100%, 59%;
+    --hsl-clr-success: 136, 90%, 52%;
+    
+    /* --color-radial: #0bf4f3; */
+    --hsl-clr-secondary: 271, 81%, 56%;
+
+    --hsl-clr-dark: 231, 15%, 25%;
+    --hsl-clr-dark-l: 240, 29%, 17%;
+    --hsl-clr-white: 0, 0%, 100%;
+    --hsl-clr-white-l: 240, 20%, 97%; 
+
+    --hsl-clr-main: 240, 29%, 17%;
+    --hsl-clr-light: 240, 20%, 97%;
+    --hsl-clr-main-variant: 240, 42%, 30%;
+    --hsl-clr-text-muted: 213, 16%, 56%;
+
+    /* 
+    --hsl-clr-white: 231, 15%, 25%;
+    --hsl-clr-white-l: 240, 29%, 17%;
+    --hsl-clr-dark: 0, 0%, 100%;
+    --hsl-clr-dark-l: 240, 20%, 97%;
+    */
+
+    --gradient-main: linear-gradient(89.98deg, #ae67fa 6.85%, #ff8a71 50%);
+    --gradient-radial: radial-gradient(#ae67fa 6.85%, #ff8a71 50%, transparent, transparent, transparent);
+  }
+  .bg-radial-bs {
+    box-shadow: 
+      0 0 55px 80px hsl(var(--hsl-clr-secondary)),
+      0 0 410px 30px hsl(var(--hsl-clr-secondary)),
+      0 0 420px 20px hsl(var(--hsl-clr-secondary)),
+      0 0 440px hsl(var(--hsl-clr-secondary)),
+      0 0 580px hsl(var(--hsl-clr-secondary));
+  }
+  /* html.dark {
+    --hsl-clr-white: 231, 15%, 25%;
+    --hsl-clr-white-l: 240, 29%, 17%;
+    --hsl-clr-dark: 0, 0%, 100%;
+    --hsl-clr-dark-l: 240, 20%, 97%;
+  } */
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* @media (pref) */
+
+  html {
+    /* font-size: 62.5%; */
+    scroll-behavior: smooth;
+    line-height: 1.5;
+  }
+  body {
+    font-weight: 400;
+
+    font-family: "Quicksand", sans-serif;
+    /* font-family: "Poppins", sans-serif; */
+    overflow-x: hidden;
+    @apply text-base bg-dark-l text-white;
+  }
+
+  h1 {
+    @apply text-6xl font-bold;
+  }
+  h2 {
+    @apply text-4xl font-semibold;
+  }
+  h3 {
+    @apply text-2xl font-semibold;
+  }
+  h4 {
+    @apply text-xl font-semibold;
+  }
+  h5 {
+    @apply text-base font-semibold;
+  }
+  h6 {
+    @apply text-sm;
+  }
+  img,
+  svg {
+    display:inline-block;
+    max-width:100%;
+  }
+  a {
+    @apply leading-none
+  }
+}
+
+@layer components {
+  .btn {
+    @apply  py-2 font-semibold px-4 leading-none rounded-[2px] text-center transition-all duration-300 cursor-pointer inline-block border border-transparent;
+  }
+  .text-gradient {
+    /* background: var(--gradient-text); */
+    @apply bg-gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .f-input {
+    @apply rounded-md outline-none w-full px-4 py-2 border-2 border-dark bg-white-l/50 text-dark focus:border-purple-500 focus:shadow-lg;
+  }
+  .f-input-fill {
+    /* @apply w-full p-4 py-2 border border-gray-400 rounded-md text-main focus:shadow-lg; */
+    @apply w-full p-4 py-2 border dark:border-none bg-white border-dark/50 rounded-md text-dark;
+  }
+  
+}
+
+@layer utilities {
+  .loader, .inline-text {
+    @apply animate-spin; 
+  }
+  .padding {
+    @apply sm:px-16 px-8 sm:py-24 py-12;
+  }
+  .container-x {
+    @apply max-w-[1440px] w-[95%] px-2 mx-auto;
+  }
+  .section-p {
+    padding-block: 50px;
+  }
+  /* Text ellipses */
+  .show-ellipsis {
+    @apply text-ellipsis whitespace-nowrap overflow-hidden;
+  } 
+  .show-ellipsis-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    white-space: pre-wrap;
+  }
+
+  /* ------BTN------- */
+  /* Outlines */
+  .btn.line {
+    @apply border-white;
+  }
+  .btn.line-light {
+    @apply border-light text-light;
+  }
+  .btn.line-main {
+    @apply border-main text-main;
+  }
+
+  /* Btn Appearance */
+  .btn.slim {
+    @apply py-1 px-5 text-lg;
+  } 
+  .btn.small {
+    @apply py-1 px-5 text-sm;
+  }
+  /* Btn States */
+  .btn:hover {
+    @apply opacity-75 shadow-bs;
+  }
+  /* ------BTN------- */
+
+  /* ------FORM EL------- */
+  textarea.f-input {
+    @apply h-[180px]  resize-none p-4;
+  }
+  /* Input Errors */
+  .f-input.error {
+    @apply border-danger;
+  }
+  .f-input.error ~ .icon {
+    @apply text-danger;
+  }
+  /* ------FORM EL------- */
+}
+
+
+/* 
+.inOpacity {
+  animation: inOpacity 300ms ease-in-out forwards;
+  animation-delay: 150ms;
+}
+
+@keyframes inOpacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.inTranslate {
+  animation: inTranslate 300ms ease-in-out forwards;
+}
+@keyframes inTranslate {
+  to {
+    transform: translateY(0);
+    visibility: visible;
+    opacity: 1;
+  }
+} */
