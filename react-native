@@ -1,0 +1,56 @@
+# DevLee
+
+## Features
+
+- Animations
+- Activity Indicator/ Loaders
+- App Bar
+- Avatar
+- Badge
+- Banner
+- Top Navigation and Bar
+- Bottom Navigation and Bar
+
+- buttons
+- Cards
+- Checkbox
+- Checkbox Item
+- Radio Button and Group and item
+- Chip
+
+- Search bar
+- Text Inputs
+- Selects --List
+- Toggle Button
+- Tooltip
+
+- Data table
+- Dialog
+- Divider
+- Floating Action Button
+- Icon Button- List Accordion and group
+- Progress Bar
+
+- Touchable Ripple
+
+- Theme
+
+- Calendar
+- Tab View
+- Drawer
+
+## Topics Adv
+
+- APIs
+- Headers and Navs
+- Layouts: flex, grid
+- Local Storage Mechanism
+- State Context
+- Themes
+- Installation and Setup
+
+## To Git
+
+- Waker Framework
+- vite-react-tailwind-setup
+- react-native cheat sheet
